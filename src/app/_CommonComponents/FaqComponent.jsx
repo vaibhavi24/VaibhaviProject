@@ -66,6 +66,8 @@
 
 // export default FaqComponentPage;
 
+
+
 import React from 'react';
 import Image from 'next/image'; // Import Image from next/image for optimized images
 import DropDown from '../find-jobs/components/DropDownComponents';
@@ -112,7 +114,7 @@ const FaqComponentPage = () => {
       <div className="w-[90%] flex flex-row items-start justify-center gap-[50.7px] max-w-full">
         <div className="flex flex-col justify-center items-start">
           <h1 className="text-[#0466C1] text-start font-bold text-4xl tracking-wider mb-9">
-            FAQ's
+            FAQ&apos;s
           </h1>
           <div className="relative w-[70%] max-h-[70%] object-contain min-h-[40%] max-w-full mq1275:flex-1">
             <Image
