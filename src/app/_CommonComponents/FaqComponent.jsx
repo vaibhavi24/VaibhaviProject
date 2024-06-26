@@ -67,7 +67,6 @@
 // export default FaqComponentPage;
 
 
-
 import React from 'react';
 import Image from 'next/image'; // Import Image from next/image for optimized images
 import DropDown from '../find-jobs/components/DropDownComponents';
@@ -109,6 +108,13 @@ const FaqComponentPage = () => {
     },
   ];
 
+  // Replace ' with &apos; in faqQuestions
+  faqQuestions = faqQuestions.map((item) => ({
+    ...item,
+    question: item.question.replace(/'/g, '&apos;'),
+    answer: item.answer.replace(/'/g, '&apos;'),
+  }));
+
   return (
     <section className="self-stretch flex flex-row items-start justify-center box-border max-w-full text-left text-xl text-gray-400 font-sub-heading mq900:pb-[77px] mq900:box-border mq450:pb-[50px] mq450:box-border p-[5rem]">
       <div className="w-[90%] flex flex-row items-start justify-center gap-[50.7px] max-w-full">
@@ -119,21 +125,4 @@ const FaqComponentPage = () => {
           <div className="relative w-[70%] max-h-[70%] object-contain min-h-[40%] max-w-full mq1275:flex-1">
             <Image
               src="/rectangle-34765@2x.png"
-              alt=""
-              layout="fill"
-              objectFit="contain"
-              loading="lazy"
-            />
-          </div>
-        </div>
-        <div className="flex-1 flex flex-col items-start justify-start gap-[24px] min-w-[545px] max-w-full mq900:min-w-full">
-          {faqQuestions.map((q, index) => (
-            <DropDown key={index} questions={q.question} answer={q.answer} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default FaqComponentPage;
+             
